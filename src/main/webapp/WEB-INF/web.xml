@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>PaginaLogin</servlet-name>
+        <servlet-class>com.bancodebogota.fdm.login.PaginaLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidarUsuarioLoginServlet</servlet-name>
+        <servlet-class>com.bancodebogota.fdm.login.ValidarUsuarioLoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidarUsuarioLoginServletJSP</servlet-name>
+        <servlet-class>com.bancodebogota.fdm.login.jsp.ValidarUsuarioLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaginaLogin</servlet-name>
+        <url-pattern>/PaginaLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidarUsuarioLoginServlet</servlet-name>
+        <url-pattern>/ValidarUsuarioLoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidarUsuarioLoginServletJSP</servlet-name>
+        <url-pattern>/ValidarUsuarioLoginServletJSP</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+        
+    </session-config>
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+     <listener>
+        <listener-class>
+          com.bancodebogota.fdm.listener.ConfigAppStartupListener
+         </listener-class>
+        </listener>
+</web-app>
