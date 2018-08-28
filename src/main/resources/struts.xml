@@ -7,6 +7,10 @@
 <struts>
 <constant name="struts.devMode" value="true" />
 <package name="loginSample" extends="struts-default">
+<result-types>
+<result-type name="tiles"
+class="org.apache.struts2.views.tiles.TilesResult"/>
+</result-types>
 <action name="index">
 <result>/index.jsp</result>
 </action>
@@ -14,6 +18,12 @@
 
 <result name="success">/welcomeStructs.jsp</result>
 <result name="error">/loginErr.jsp</result>
+<result name="successTiles" type="tiles">welcome-tiles</result>
 </action>
+
+
+
+
+
 </package>
 </struts>

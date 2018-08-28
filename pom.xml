@@ -13,6 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
          <struts2.version>2.5.14.1</struts2.version>
+         <tiles.version>2.5.17</tiles.version>
     </properties>
     
      <dependencyManagement>
@@ -29,6 +30,12 @@
     
     <dependencies>
         <dependency>
+          <groupId>org.apache.struts</groupId>
+           <artifactId>struts2-tiles-plugin</artifactId>
+            <version>${tiles.version}</version>
+             </dependency>
+        <dependency>
+            
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>

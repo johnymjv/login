@@ -20,7 +20,18 @@ public class LoginAction extends ActionSupport {
     public String execute(){
     userDto =new UserDto();
     
-    return SUCCESS;
+    return SUCCESS+"Tiles";
     }
+    
+    @Override
+    public void validate() {
+
+     if (userDto.getName().length() == 0) {
+         addFieldError("userDto.name", "Name is required.");
+        }
+      if (userDto.getPassword().length() == 0) {
+         addFieldError("userDto.password","Password is required.");
+        }
+       }
     
 }
