@@ -27,7 +27,7 @@ public class SimpleDataSource {
       public SimpleDataSource() {
 
         System.out.println("Setting up data source.");
-        DataSource dataSource = setupDataSource("jdbc:mysql://localhost/sample", "root", "rootroot");
+        DataSource dataSource = setupDataSource("jdbc:mysql://localhost:3306/sample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "conchita");
         System.out.println("Done.");
 
         Connection conn = null;
@@ -66,6 +66,7 @@ public class SimpleDataSource {
         ds.setUrl(connectURI);
         ds.setUsername(user);
         ds.setPassword(pass);
+    
         return ds;
     }
 

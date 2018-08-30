@@ -5,6 +5,7 @@
  */
 package com.bancodebogota.fsdm.controller;
 
+import com.bancodebogota.fdm.dao.LoginDao;
 import com.bancodebogota.fdm.login.dto.UserDto;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,9 +19,24 @@ public class LoginAction extends ActionSupport {
     
     @Override
     public String execute(){
-    userDto =new UserDto();
+   // userDto =new UserDto();
     
-    return SUCCESS+"Tiles";
+     UserDto us =  LoginDao.getInstance().obtenerUsuario(userDto);
+        if(us==null){
+             return ERROR;
+        }else{
+            return SUCCESS+"Tiles";
+        }
+    
+  
+    }
+
+    public UserDto getUserDto() {
+        return userDto;
+    }
+
+    public void setUserDto(UserDto userDto) {
+        this.userDto = userDto;
     }
     
     @Override
