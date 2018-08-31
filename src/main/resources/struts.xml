@@ -17,6 +17,7 @@
 <result name="success">/welcomeStructs.jsp</result>
 <result name="error">/loginErr.jsp</result>
 <result name="successTiles" type="tiles">welcome-tiles</result>
+<result name="input">/index.jsp</result>
 </action>
 
 

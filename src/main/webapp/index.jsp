@@ -8,7 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <s:form action="loginst">
-<s:textfield name="name" label="Name"></s:textfield>
-<s:password name="password" label="Password"></s:password>
+<s:textfield name="userDto.name" label="Name"></s:textfield>
+<s:password name="userDto.password" label="Password"></s:password>
 <s:submit value="login"></s:submit>
 </s:form>

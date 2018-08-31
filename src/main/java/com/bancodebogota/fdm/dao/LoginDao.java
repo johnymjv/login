@@ -38,34 +38,38 @@ public class LoginDao {
     
         String query ="select name, login, password, email from users where login = " 
                 + userDto.getLogin() + " and password = " + userDto.getPassword();
+        
+        userDto.setEmail("johnymjv@hotmail.com");
+        userDto.setName("Johny");
     
-        
-        DataSource dataSource = setupDataSource("jdbc:mysql://localhost:3306/sample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "conchita");
-        Connection conn = null;
-        Statement stmt = null;
-        ResultSet rset = null;
-
-        try {
-
-            conn = dataSource.getConnection();
-            stmt = conn.createStatement();
-            rset = stmt.executeQuery(query);
-           
-
-            if(rset.next()) {
-                userDto.setEmail(rset.getString("email"));
-                userDto.setName(rset.getString("name"));
-            }else{
-                return null;
-            }
-        } catch(SQLException e) {
-        } finally {
-            try { if (rset != null) rset.close(); } catch(SQLException e) { }
-            try { if (stmt != null) stmt.close(); } catch(SQLException e) { }
-            try { if (conn != null) conn.close(); } catch(SQLException e) { }
-        }
-        
         return userDto;
+        
+//        DataSource dataSource = setupDataSource("jdbc:mysql://localhost:3306/sample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "conchita");
+//        Connection conn = null;
+//        Statement stmt = null;
+//        ResultSet rset = null;
+//
+//        try {
+//
+//            conn = dataSource.getConnection();
+//            stmt = conn.createStatement();
+//            rset = stmt.executeQuery(query);
+//           
+//
+//            if(rset.next()) {
+//                userDto.setEmail(rset.getString("email"));
+//                userDto.setName(rset.getString("name"));
+//            }else{
+//                return null;
+//            }
+//        } catch(SQLException e) {
+//        } finally {
+//            try { if (rset != null) rset.close(); } catch(SQLException e) { }
+//            try { if (stmt != null) stmt.close(); } catch(SQLException e) { }
+//            try { if (conn != null) conn.close(); } catch(SQLException e) { }
+//        }
+//        
+//        return userDto;
     }
     
 }

@@ -42,12 +42,24 @@ public class LoginAction extends ActionSupport {
     @Override
     public void validate() {
 
-     if (userDto.getName().length() == 0) {
+     if (userDto.getName()==null) {
+         addFieldError("userDto.name", "Name is required.");
+        }else{
+      if (userDto.getName().length()==0) {
          addFieldError("userDto.name", "Name is required.");
         }
-      if (userDto.getPassword().length() == 0) {
+     
+     }
+      if (userDto.getPassword()==null) {
+          
+         addFieldError("userDto.password","Password is required.");
+        }else{
+      if (userDto.getPassword().length()==0) {
+          
          addFieldError("userDto.password","Password is required.");
         }
+      }
+      
        }
     
 }
